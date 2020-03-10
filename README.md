@@ -22,7 +22,7 @@ To detect faulty o-rings I used a number of computer vision techniques including
 Since this program is using vanilla python, it takes a while to process compared to using OpenCV which is just a wrapper for high performance C++ code.
 
 
-### Running
+## Running
 
 To run the program on each O-ring, use ```python main.py```
 
