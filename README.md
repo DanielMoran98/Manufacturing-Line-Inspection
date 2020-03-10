@@ -19,6 +19,8 @@ To detect faulty o-rings I used a number of computer vision techniques including
 
 ![Output gif](https://im2.ezgif.com/tmp/ezgif-2-aa9615b8de9e.gif)
 
+Since this program is using vanilla python, it takes a while to process compared to using OpenCV which is just a wrapper for high performance C++ code.
+
 
 ### Running
 
