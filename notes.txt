@@ -1,0 +1,6 @@
+To run all:
+	python main.py
+
+To run o-ring 12:
+	python main.py 12
+
