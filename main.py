@@ -194,7 +194,7 @@ if len(sys.argv) > 1:
 while imageNumber <= imageCount:
     # Read in an image
     cwd = os.getcwd()
-    img = cv.imread(str(cwd) + r'\images\Oring'+ str(imageNumber) +'.jpg',0)
+    img = cv.imread(r'.\images\Oring'+ str(imageNumber) +'.jpg',0)
     originalImg = img.copy()
     before = time.time()
 
