@@ -5,6 +5,7 @@ import math
 import matplotlib.pyplot as plt
 import queue
 import sys
+import os
 from calculations import *
 
 def threshold(img, thresholdValue):
@@ -164,6 +165,9 @@ def displayLabelled(img, centroid, verdict, originalImg):
 
     return img
 
+def outputToFile(img, imageNumber):
+    cv.imwrite( "./example_output/Oring"+str(imageNumber)+".jpg", img )
+
 def imhist(img):
     # Returns: A histogram of pixel values of an image
     hist = np.zeros(256)
@@ -180,7 +184,7 @@ def imhist(img):
 # E.g if you want to view O-ring 5:     'python main.py 5' 
  
 imageNumber = 1
-imageCount = 15
+imageCount = 14
 
 
 if len(sys.argv) > 1:
@@ -189,8 +193,8 @@ if len(sys.argv) > 1:
 
 while imageNumber <= imageCount:
     # Read in an image
-    
-    img = cv.imread(r'C:\Users\Dano\Desktop\College\Year4-Sem2\Computer Vision\O-ring_inspection\images\Oring'+ str(imageNumber) +'.jpg',0)
+    cwd = os.getcwd()
+    img = cv.imread(str(cwd) + r'\images\Oring'+ str(imageNumber) +'.jpg',0)
     originalImg = img.copy()
     before = time.time()
 
@@ -220,8 +224,9 @@ while imageNumber <= imageCount:
     timeTaken = round(after-before, 2)
 
     # Display the final image
-    displayLabelled(labelledArray, centroid, verdict, originalImg)
+    finalImg = displayLabelled(labelledArray, centroid, verdict, originalImg)
     
+    outputToFile(finalImg, imageNumber)
     imageNumber += 1
 
 
